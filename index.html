@@ -4,15 +4,26 @@
 	
 	<script>
 	var integer;
-		
+	var integer2;
+	
 	function onLoad(){
 		integer = 0;
+		integer2 = 0;
+		
 		var elem = document.getElementById('cat_img');
 		document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
-		console.log(elem);
+		
 		elem.addEventListener('click', function(){
 			integer = integer + 1;
 			document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
+		}, false);
+		
+		var elem2 = document.getElementById('cat_img2');
+		document.getElementById("counter2").innerHTML = "Cat Clicker: " + integer2;
+		
+		elem2.addEventListener('click', function(){
+			integer2 = integer2 + 1;
+			document.getElementById("counter2").innerHTML = "Cat Clicker: " + integer2;
 		}, false);
 	}
 		
@@ -26,9 +37,14 @@
 	<h1>Cat Clicker</h1>
 	<div>
 		<img src='img/cat.jpg' id='cat_img' >
-	</div>
-	<div>
+		<br>
 		<label id='counter'></label>
+	</div>
+	<br>
+	<div>
+		<img src='img/cat2.jpg' id='cat_img2' >
+		<br>
+		<label id='counter2'></label>
 	</div>
 </body>
 
