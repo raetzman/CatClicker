@@ -63,10 +63,9 @@ var CatView = {
 model.currentCat = model.cats[0];
 CatListView.onload();
 CatView.onload();
-alert("init");
+
 document.getElementById('cat-img').addEventListener('click', 
 	function(){
 		model.currentCat.clickCount++;
 		CatView.render();
-		console.log(model.currentCat);
 	});
