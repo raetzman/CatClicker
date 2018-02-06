@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-	
-	<script>
-	var integer;
-	var integer2;
-	
-	function onLoad(){
-		integer = 0;
-		integer2 = 0;
-		
-		var elem = document.getElementById('cat_img');
-		document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
-		
-		elem.addEventListener('click', function(){
-			integer = integer + 1;
-			document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
-		}, false);
-		
-		var elem2 = document.getElementById('cat_img2');
-		document.getElementById("counter2").innerHTML = "Cat Clicker: " + integer2;
-		
-		elem2.addEventListener('click', function(){
-			integer2 = integer2 + 1;
-			document.getElementById("counter2").innerHTML = "Cat Clicker: " + integer2;
-		}, false);
-	}
-		
-		
-	
-	</script>
-	<title>Cat Clicker</title>
-</head>
-
-<body onload="onLoad()">
-	<h1>Cat Clicker</h1>
-	<div>
-		<img src='img/cat.jpg' id='cat_img' >
-		<br>
-		<label id='counter'></label>
-	</div>
-	<br>
-	<div>
-		<img src='img/cat2.jpg' id='cat_img2' >
-		<br>
-		<label id='counter2'></label>
-	</div>
-</body>
-
+   <head>
+      <style>
+         img{
+         width: 80%;
+         }
+      </style>
+      <style>
+         div.container {
+         width: 100%;
+         border: 1px solid gray;
+         }
+         header, footer {
+         padding: 1em;
+         color: white;
+         background-color: black;
+         clear: left;
+         text-align: center;
+         }
+         nav {
+         float: left;
+         max-width: 160px;
+         margin: 0;
+         padding: 1em;
+         }
+         nav ul {
+         list-style-type: none;
+         padding: 0;
+         }
+         nav ul a {
+         text-decoration: none;
+         }
+         article {
+         margin-left: 170px;
+         border-left: 1px solid gray;
+         padding: 1em;
+         overflow: hidden;
+         }
+      </style>
+     
+      <title>Cat Clicker</title>
+   </head>
+   <body>
+      <div class="container">
+         <header>
+            <h1>Cat Clicker Premium</h1>
+         </header>
+         <nav>
+            <ul id='cat-list'>
+            </ul>
+         </nav>
+         <article>
+            <div>
+				<h3 id="cat-name"></h3>
+               <img src='img/cat.jpg' id='cat-img' >
+               <br>
+               <label id='cat-counter'>0</label>
+            </div>
+         </article>
+         <footer>Copyright &copy; W3Schools.com</footer>
+      </div>
+	  <script src="js/app.js"></script>
+   </body>
 </html>
