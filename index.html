@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<script>
+	var integer;
+		
+	function onLoad(){
+		integer = 0;
+		var elem = document.getElementById('cat_img');
+		document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
+		console.log(elem);
+		elem.addEventListener('click', function(){
+			integer = integer + 1;
+			document.getElementById("counter").innerHTML = "Cat Clicker: " + integer;
+		}, false);
+	}
+		
+		
+	
+	</script>
+	<title>Cat Clicker</title>
+</head>
+
+<body onload="onLoad()">
+	<h1>Cat Clicker</h1>
+	<div>
+		<img src='img/cat.jpg' id='cat_img' >
+	</div>
+	<div>
+		<label id='counter'></label>
+	</div>
+</body>
+
+</html>
