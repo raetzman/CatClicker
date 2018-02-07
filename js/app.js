@@ -33,8 +33,7 @@ var octopus = {
 
 
  var CatListView = {
-	init: function(){
-		
+	init: function(){		
 		// makes new object into this object 
 		this.catListElem = document.getElementById('cat-list');		
 		var cat;
