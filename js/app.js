@@ -8,7 +8,7 @@ var model = {
         },
         {
             clickCount : 0,
-            name : 'Hiding',
+            name : 'Hiding Cat',
             imgSrc : 'img/cat2.jpg',
         },
         {
@@ -19,27 +19,25 @@ var model = {
     ]
 };
 
-
-
-var CatView = {
-	onload: function(){		
-		this.render();
-	},
-	render: function(){
-		document.getElementById('cat-counter').innerHTML = model.currentCat.clickCount;
-	}
+var octopus = {
+	init: function() {
+		model.currentCat = model.cats[0];
+		CatListView.init();
+		CatView.init();
+		document.getElementById('cat-img').addEventListener('click', function(){
+			model.currentCat.clickCount++;
+			CatView.render();
+		});
+	}	
 }
 
 
  var CatListView = {
-	 onload: function(){
-		// makes new object into this object 
-		this.catListElem = document.getElementById('cat-list');
-		this.render();
+	init: function(){
 		
-	 },
-     render: function(){
-		 var cat;
+		// makes new object into this object 
+		this.catListElem = document.getElementById('cat-list');		
+		var cat;
 		 for(i = 0; i < model.cats.length; i++){		
 			cat = model.cats[i];		 
 			var li = document.createElement('li');
@@ -55,17 +53,16 @@ var CatView = {
                 };
             })(cat));
 		}
-		
-		
 	 }
  }
-     
-model.currentCat = model.cats[0];
-CatListView.onload();
-CatView.onload();
 
-document.getElementById('cat-img').addEventListener('click', 
-	function(){
-		model.currentCat.clickCount++;
-		CatView.render();
-	});
+ var CatView = {
+	init: function(){		
+		this.render();
+	},
+	render: function(){
+		document.getElementById('cat-counter').innerHTML = model.currentCat.clickCount;
+	}
+}
+
+octopus.init();
